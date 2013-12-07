@@ -118,6 +118,6 @@ cf_upload: publish
 
 github: publish
 	ghp-import -n $(OUTPUTDIR)
-	git push origin gh-pages
+	git push origin gh-pages:master
 
 .PHONY: html help clean regenerate serve devserver update_theme publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
