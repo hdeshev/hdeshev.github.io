@@ -40,7 +40,7 @@ help:
 	@echo '   make html                        (re)generate the web site          '
 	@echo '   make clean                       remove the generated files         '
 	@echo '   make regenerate                  regenerate files upon modification '
-	@echo '   make get_theme                   update local theme repository      '
+	@echo '   make update_theme                update local theme repository      '
 	@echo '   make publish                     generate using production settings '
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
@@ -84,11 +84,18 @@ stopserver:
 	kill -9 `cat srv.pid`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
-get_theme:
-	[ ! -d $(THEME_DIR) ] && git clone $(THEME_REPO) $(THEME_DIR) || true
-	cd $(THEME_DIR) && git submodule update --init
+update_theme:
+	@if [ ! -d $(THEME_DIR) ] ; then \
+		echo "$(THEME_DIR) not found."; \
+		git clone $(THEME_REPO) $(THEME_DIR) || true ; \
+	else \
+		echo "$(THEME_DIR) already here. Updating..."; \
+		cd $(THEME_DIR) && git pull; \
+	fi
+	@echo "Updating theme submodules..."
+	@cd $(THEME_DIR) && git submodule update --init
 
-publish: get_theme
+publish: update_theme
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
