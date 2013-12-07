@@ -4,14 +4,17 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Hristo Deshev'
 SITENAME = u'Hristo Deshev'
-SITEURL = ''
+SITEURL = 'http://deshev.com'
+FEED_DOMAIN = SITEURL
 
 TIMEZONE = 'Europe/Sofia'
 
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+FEED_ATOM = 'feeds/atom.xml'
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED = FEED_ATOM  #mnmlist theme uses deprecated FEED config
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
