@@ -35,7 +35,6 @@ STATIC_PATHS = ['images', 'github']
 
 EXTRA_PATH_METADATA = {
     'github/CNAME': {'path': 'CNAME'},
-    'github/.nojekyll': {'path': '.nojekyll'},
 }
 
 THEME = 'pelican-themes/mnmlist'
