@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Hristo Deshev</title><link href="http://deshev.com/" rel="alternate"></link><link href="http://deshev.com/feeds/atom.xml" rel="self"></link><id>http://deshev.com/</id><updated>2013-12-07T12:51:00+02:00</updated><entry><title>First post</title><link href="http://deshev.com/first-post.html" rel="alternate"></link><updated>2013-12-07T12:51:00+02:00</updated><author><name>Hristo Deshev</name></author><id>tag:deshev.com,2013-12-07:first-post.html</id><summary type="html">&lt;p&gt;OHAI!&lt;/p&gt;
+&lt;p&gt;Nothing to see here (yet). Move along.&lt;/p&gt;
+</summary><category term="test"></category></entry></feed>
