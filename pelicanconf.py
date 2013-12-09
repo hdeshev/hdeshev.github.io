@@ -54,3 +54,6 @@ EXTRA_PATH_METADATA = {
 
 #THEME = 'pelican-octopress-theme'
 THEME = 'flasky-theme'
+
+GOOGLE_ANALYTICS_ACCOUNT = 'UA-46323265-1'
+GOOGLE_ANALYTICS_SITE = 'deshev.com'
