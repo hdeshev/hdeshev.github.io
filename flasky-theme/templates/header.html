@@ -1,0 +1,11 @@
+      <h1>{{SITENAME}}</h1>
+      <h3>{{SITESUBTITLE}}</h3>
+      <div class="separator-top"></div>
+      <div class=navigation>
+        <ul>
+          {% for section in SECTIONS %}
+            <li><a href="{{ SITEURL }}/{{ section[1]}}">{{ section[0] }}</a> </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="separator-bottom"></div>
