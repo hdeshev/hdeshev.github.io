@@ -5,7 +5,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 AUTHOR = 'Hristo Deshev'
 SITENAME = 'Hristo Deshev'
 SITESUBTITLE = 'Fixing the web. One app at a time.'
-#SITEURL = 'http://deshev.com'
+SITEURL = 'http://deshev.com'
 
 TIMEZONE = 'Europe/Sofia'
 
