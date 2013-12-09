@@ -32,12 +32,14 @@ MAIL_HOST = 'deshev.com'
 TWITTER_USERNAME = 'hdeshev'
 GITHUB_URL = 'https://github.com/hdeshev'
 
-SECTIONS = [('Blog', 'index.html'),
-        #('Archive', 'archives.html'),
-        ('Tags', 'tags.html'),
-        #('Projects', 'pages/projects.html'),
-        #('Talks', 'pages/talks.html'),
-        ('About', 'pages/about-me.html')]
+SECTIONS = [
+    ('Home', 'index.html'),
+    #('Archive', 'archives.html'),
+    ('Tags', 'tags.html'),
+    #('Projects', 'pages/projects.html'),
+    #('Talks', 'pages/talks.html'),
+    #('About', 'pages/about-me.html'),
+]
 
 DEFAULT_PAGINATION = 10
 
