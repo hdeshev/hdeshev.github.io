@@ -1,20 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+from __future__ import absolute_import, division, print_function, unicode_literals
 
-AUTHOR = u'Hristo Deshev'
-SITENAME = u'Hristo Deshev'
-SITEURL = 'http://deshev.com'
-FEED_DOMAIN = SITEURL
+AUTHOR = 'Hristo Deshev'
+SITENAME = 'Hristo Deshev'
+SITESUBTITLE = 'Fixing the web. One app at a time.'
+#SITEURL = 'http://deshev.com'
 
 TIMEZONE = 'Europe/Sofia'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ATOM = 'feeds/atom.xml'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-FEED = FEED_ATOM  #mnmlist theme uses deprecated FEED config
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
@@ -29,6 +27,18 @@ LINKS =  (
 SOCIAL = (('GitHub', 'https://github.com/hdeshev'),
           ('Twitter', 'https://twitter.com/hdeshev'),)
 
+MAIL_USERNAME = 'hristo'
+MAIL_HOST = 'deshev.com'
+TWITTER_USERNAME = 'hdeshev'
+GITHUB_URL = 'https://github.com/hdeshev'
+
+SECTIONS = [('Blog', 'index.html'),
+        #('Archive', 'archives.html'),
+        ('Tags', 'tags.html'),
+        #('Projects', 'pages/projects.html'),
+        #('Talks', 'pages/talks.html'),
+        ('About', 'pages/about-me.html')]
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -40,4 +50,5 @@ EXTRA_PATH_METADATA = {
     'github/CNAME': {'path': 'CNAME'},
 }
 
-THEME = 'pelican-themes/mnmlist'
+#THEME = 'pelican-octopress-theme'
+THEME = 'flasky-theme'
