@@ -40,7 +40,6 @@ help:
 	@echo '   make html                        (re)generate the web site          '
 	@echo '   make clean                       remove the generated files         '
 	@echo '   make regenerate                  regenerate files upon modification '
-	@echo '   make update_theme                update local theme repository      '
 	@echo '   make publish                     generate using production settings '
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
@@ -84,18 +83,7 @@ stopserver:
 	kill -9 `cat srv.pid`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
-update_theme:
-	@if [ ! -d $(THEME_DIR) ] ; then \
-		echo "$(THEME_DIR) not found."; \
-		git clone $(THEME_REPO) $(THEME_DIR) || true ; \
-	else \
-		echo "$(THEME_DIR) already here. Updating..."; \
-		cd $(THEME_DIR) && git pull; \
-	fi
-	@echo "Updating theme submodules..."
-	@cd $(THEME_DIR) && git submodule update --init
-
-publish: update_theme
+publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
@@ -120,4 +108,4 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages:master
 
-.PHONY: html help clean regenerate serve devserver update_theme publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
