@@ -2,13 +2,15 @@
   <p>
     <div class=social style="font-size: 27px;">
       <ul>
-        <script language="JavaScript">
+        <script type="text/javascript">
           u = '{{ MAIL_USERNAME }}';
           s = '{{ MAIL_HOST }}';
-          document.write('<a href=\"mailto:' + u + '@' + s + '\" target=\"_blank\">');
         </script>
-            <li><i class="icon-envelope icon-large"></i> </li>
-        </a>
+        <li>
+          <a href="#" title="{{ MAIL_USERNAME }} at {{ MAIL_HOST }}" onclick="this.href = 'mailto: ' + u + '@' + s"
+            <i class="icon-envelope icon-large"></i>
+          </a>
+        </li>
         {% if TWITTER_USERNAME %}
         <a href="http://twitter.com/{{ TWITTER_USERNAME }}" target="_blank"> <li> <i class="icon-twitter-sign icon-large"> </li></i> </a>
         {% endif %}
