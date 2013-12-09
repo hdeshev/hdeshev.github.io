@@ -11,3 +11,8 @@ First post
 OHAI!
 
 Nothing to see here (yet). Move along.
+
+.. code:: python
+
+    def test():
+        print('gg')
